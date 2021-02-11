@@ -1,0 +1,47 @@
+<body>
+  <p id="notice">
+    <%= notice %>
+  </p>
+ <h1>User info</h1>
+
+  <p>name</p>
+
+  <p>introduction</p>
+
+  <%= link_to "edit", edit_user_path(current_user.id) %>
+
+
+  <h1>New book</h1>
+<%= form_with model: @book, local:true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :opinion %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+  <h1>Books</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <% @books.each do |book| %>
+        <tr>
+          <%= link_to book_path(book.id) do %>
+            <td>user-image</td>
+            <td><%= book.title %></td>
+            <td><%= book.opinion %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
