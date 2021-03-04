@@ -4,7 +4,8 @@
 <div class = "container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'books/book', user: @user, book: @book_new %>
+      <%= render 'users/user', user: @user %>
+      <%= render 'books/book', book: @book_new %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
