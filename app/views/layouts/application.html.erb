@@ -68,6 +68,15 @@
           </div>
         </div>
       </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <% if user_signed_in? %>
+              <%= render 'search/form' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
     <%= yield %>

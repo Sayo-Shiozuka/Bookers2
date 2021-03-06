@@ -1,0 +1,7 @@
+<%= form_tag(search_path, :method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= select_tag(:option, options_for_select([["Book", "1"],["User", "2"]])) %>
+  <%= select_tag(:choice, options_for_select([["部分一致", "1"],["完全一致", "2"],["前方一致", "3"],["後方一致", "4"]])) %>
+  <%# hidden_field_tag 'search[method]', "部分一致" => "partial" %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
