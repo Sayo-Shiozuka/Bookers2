@@ -10,11 +10,11 @@ class BookCommentsController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:book_id])
     @comment = BookComment.find(params[:id])
     #BookComment.find_by(id:params[:id],book_id:params[:book_id]).destroy
     @comment.destroy
     #redirect_to book_path(params[:book_id])
-    @book = Book.find(params[:book_id])
     @user = @book.user
   end
 

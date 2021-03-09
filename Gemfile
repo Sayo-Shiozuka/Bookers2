@@ -75,3 +75,4 @@ gem 'data-confirm-modal'
 gem 'pry-byebug'
 
 gem 'jquery-rails'
+gem 'jp_prefecture'

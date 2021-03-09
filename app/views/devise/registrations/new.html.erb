@@ -18,6 +18,26 @@
           </div>
 
           <div class="form-group">
+            <%= f.label :postal_code %><br />
+            <%= f.text_field :postal_code, autofocus:true, autocomplete: "postal_code" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :prefecture_code %><br />
+            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :city %><br />
+            <%= f.text_field :city, autofocus: true, autocomplete: 'city' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :street %><br />
+            <%= f.text_field :building, autofocus: true, autocomplete: 'building' %>
+          </div>
+
+          <div class="form-group">
           <%= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
