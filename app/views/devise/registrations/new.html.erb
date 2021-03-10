@@ -19,22 +19,22 @@
 
           <div class="form-group">
             <%= f.label :postal_code %><br />
-            <%= f.text_field :postal_code, autofocus:true, autocomplete: "postal_code" %>
+            <%= f.text_field :postal_code, autofocus:true, autocomplete: "postal_code", id:"address_zipcode" %>
           </div>
 
           <div class="form-group">
             <%= f.label :prefecture_code %><br />
-            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
+            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, id:"address_prefecture_name" %>
           </div>
 
           <div class="form-group">
             <%= f.label :city %><br />
-            <%= f.text_field :city, autofocus: true, autocomplete: 'city' %>
+            <%= f.text_field :city, autofocus: true, autocomplete: 'city', id:"address_city" %>
           </div>
 
           <div class="form-group">
             <%= f.label :street %><br />
-            <%= f.text_field :building, autofocus: true, autocomplete: 'building' %>
+            <%= f.text_field :building, autofocus: true, autocomplete: 'building', id:"address_street" %>
           </div>
 
           <div class="form-group">
